@@ -40,7 +40,7 @@ export function createConversationStore(connect = connectMongoDB) {
         { $sort: { created_at: 1, _id: 1 } },
         { $group: { _id: '$conversation_code', title: { $first: '$question' },
           updated_at: { $max: '$updated_at' }, turn_count: { $sum: 1 } } },
-        { $sort: { updated_at: -1, _id: 1 } }, { $limit: 50 },
+        { $sort: { updated_at: -1, _id: 1 } },
         { $project: { _id: 0, conversation_id: '$_id', title: { $substrCP: ['$title', 0, 80] }, updated_at: 1, turn_count: 1 } },
       ]).toArray();
     },

@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "test": "node --test tests/app.test.js tests/upload.test.js tests/datasets.test.js tests/conversations.test.js tests/mongodbData.test.js",
+    "test": "node --test tests/app.test.js tests/upload.test.js tests/datasets.test.js tests/conversations.test.js tests/chatOrganization.test.js tests/mongodbData.test.js",
     "db:load": "node scripts/loadMongoDB.js"
   }
 }
